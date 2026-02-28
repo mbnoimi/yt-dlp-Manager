@@ -76,7 +76,7 @@ def root():
     index_path = STATIC_DIR / "index.html"
     if os.path.exists(index_path):
         return FileResponse(index_path)
-    return {"message": "yt-dlp Manager API", "version": "1.0.0"}
+    return {"message": app.title, "version": app.version}
 
 
 @app.get("/health")
