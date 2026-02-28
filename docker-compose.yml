@@ -1,0 +1,14 @@
+services:
+  yt-dlp-manager:
+    image: mbnoimi/yt-dlp-manager:latest
+    container_name: yt-dlp-manager
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/backend/logs
+    environment:
+      - BACKEND_SECRET_KEY=your-secret-key-change-in-production
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=pass
+    restart: unless-stopped

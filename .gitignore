@@ -1,0 +1,162 @@
+# =============================================================================
+# MONOREPO ROOT - GLOBAL IGNORES
+# =============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor/IDE (selectively allow configs)
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Root-level Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Root-level virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Runtime data directories (NEVER commit)
+data/
+download/
+global/
+
+# Logs at root
+*.log
+logs/
+
+# =============================================================================
+# SCRIPTS DIRECTORY - FULLY IGNORED
+# =============================================================================
+script/
+
+# =============================================================================
+# BACKEND (FastAPI/Python) - SOURCE TRACKED, ARTIFACTS IGNORED
+# =============================================================================
+
+# Byte-compiled files
+backend/**/__pycache__/
+backend/**/*.py[cod]
+backend/*$py.class
+
+# Virtual environment (CRITICAL)
+backend/venv/
+backend/.venv/
+
+# Environment files: .env IS tracked per your requirement
+!backend/.env
+backend/.env.local
+backend/.env.*.local
+backend/.envrc
+
+# Build/packaging artifacts
+backend/build/
+backend/dist/
+backend/*.egg-info/
+backend/*.egg
+backend/*.spec
+backend/*.manifest
+
+# Testing & coverage
+backend/.pytest_cache/
+backend/.coverage*
+backend/htmlcov/
+backend/.tox/
+backend/.nox/
+
+# Type checkers & linters
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/.pytype/
+backend/.pyre/
+
+# Database files in backend
+backend/db.sqlite3*
+backend/*.db
+
+# Logs specific to backend
+backend/logs/
+
+# Celery/Redis runtime files
+backend/celerybeat-schedule
+backend/celerybeat.pid
+backend/*.rdb
+backend/*.aof
+
+# =============================================================================
+# FRONTEND (Svelte/Vite/TypeScript) - SOURCE TRACKED, ARTIFACTS IGNORED
+# =============================================================================
+
+# Dependencies (CRITICAL)
+frontend/node_modules/
+
+# Build outputs (CRITICAL)
+frontend/dist/
+frontend/build/
+
+# Vite/Svelte cache
+frontend/.vite/
+frontend/.svelte-kit/
+
+# TypeScript build info
+frontend/*.tsbuildinfo
+
+# Environment files: .env IS tracked per your requirement
+!frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Frontend logs
+frontend/*.log
+
+# =============================================================================
+# PACKAGE MANAGER LOCK FILES (Commit for reproducibility)
+# =============================================================================
+
+# Python: Uncomment the one you use
+# !backend/poetry.lock
+# !backend/uv.lock  
+# !backend/pdm.lock
+# !backend/Pipfile.lock
+
+# Node.js: Commit for reproducibility
+!frontend/package-lock.json
+# !frontend/pnpm-lock.yaml
+# !frontend/yarn.lock
+
+# =============================================================================
+# EXPLICIT TRACKING EXCEPTIONS
+# =============================================================================
+
+# Ensure important files are never accidentally ignored
+!.gitkeep
+!**/.gitkeep
+
+# Re-include .env files at any level (as requested)
+!.env
+!backend/.env
+!frontend/.env
+
+# Keep README/instruction files
+*.md
+!instructs.md
+!README.md
+!TODO.md

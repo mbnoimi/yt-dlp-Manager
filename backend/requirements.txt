@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+python-multipart
+PyJWT
+email-validator
+requests
+python-dotenv
+psutil
+yt-dlp[curl-cffi]
+croniter
+PyYAML
