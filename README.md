@@ -54,10 +54,46 @@
 
 ### Docker (Recommended)
 
+#### Docker Compose
+
+```yml
+services:
+  yt-dlp-manager:
+    image: mbnoimi/yt-dlp-manager:latest
+    container_name: yt-dlp-manager
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/backend/logs
+    environment:
+      - BACKEND_SECRET_KEY=your-secret-key-change-in-production
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=pass
+    restart: unless-stopped
+```
+
+Then
+
 ```bash
-# Pull and run from Docker Hub
 docker-compose up -d
 ```
+
+#### Direct Command
+
+```bash
+docker run -d \
+  --name yt-dlp-manager \
+  -p 4000:4000 \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/logs:/app/backend/logs \
+  -e BACKEND_SECRET_KEY=your-secret-key-change-in-production \
+  -e ADMIN_USERNAME=admin \
+  -e ADMIN_PASSWORD=pass \
+  --restart unless-stopped \
+  mbnoimi/yt-dlp-manager:latest
+```
+
 
 The image is automatically pulled from [Docker Hub](https://hub.docker.com/r/mbnoimi/yt-dlp-manager).
 
