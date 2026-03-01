@@ -50,6 +50,7 @@
     }
   }
 
+  // FIXME: doesn't work under Docker containers
   function restartServer() {
     openModal(ConfirmDialog, {
       title: 'Confirm Restart',

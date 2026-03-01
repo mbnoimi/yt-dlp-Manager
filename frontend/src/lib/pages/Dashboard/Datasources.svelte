@@ -1,3 +1,4 @@
+// FIXME: json file doesn't reload fine after clicking Save button
 <script lang="ts">
   import { onMount } from 'svelte';
   import { api } from '../../api/client';
