@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
+
+# TODO: Add l10n (internationalization) support using FastAPI's request localization or similar
 from backend.db.base import Base
 from backend.db.session import engine, SessionLocal
 from backend.db.models import User, Config, UrlSource, DownloadedFile, DownloadJob
@@ -31,6 +33,8 @@ app.add_middleware(
 
 if os.path.exists(STATIC_DIR):
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+# TODO: Refactor all endpoints - some endpoints are useless and should be removed or consolidated
 
 app.include_router(auth.router, prefix="/api/v1")
 app.include_router(configs.router, prefix="/api/v1")

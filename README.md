@@ -111,6 +111,8 @@ The image is automatically pulled from [Docker Hub](https://hub.docker.com/r/mbn
 
 ## 📖 How to Use
 
+<!-- TODO: Add screenshots to illustrate each step -->
+
 ### 1. Create a Datasource
 
 A datasource combines your download settings with the URLs you want to download.

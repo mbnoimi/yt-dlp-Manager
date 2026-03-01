@@ -381,6 +381,7 @@ def run_yt_dlp(
                 state.log(f"Wrote info.json: {info_json_path}")
             
             if opts.get('write_thumbnail') and info:
+                # FIXME: --convert-thumbnails option doesn't work - needs ffmpeg or imagemagick dependency
                 final_filename = ydl.prepare_filename(info)
                 thumb_path = os.path.splitext(final_filename)[0] + '.webp'
                 if not os.path.exists(thumb_path) and 'thumbnail' in info:

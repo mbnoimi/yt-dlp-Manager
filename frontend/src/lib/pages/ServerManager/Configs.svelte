@@ -33,6 +33,8 @@
     }
   }
 
+  // FIXME: This function fails in Docker containers because the backend tries to write to
+  // hardcoded '/app/.env' path. The .env file location differs in Docker vs local development.
   async function saveConfig() {
     if (!config) return;
     saving = true;

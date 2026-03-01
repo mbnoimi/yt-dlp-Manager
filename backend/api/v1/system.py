@@ -195,6 +195,7 @@ def parse_bool(value):
 
 
 @router.put("/env-config", response_model=dict)
+# TODO: Revisit this endpoint for Docker compatibility - hardcoded path fails in containers
 def update_env_config(config: dict):
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
     env_path = os.path.join(project_root, ".env")

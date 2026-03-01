@@ -3,6 +3,9 @@
   import Router, { push, location } from 'svelte-spa-router';
   import { user, loadUser, isAuthenticated, isAdmin, logout as authLogout } from './lib/stores/auth';
   import { startSSE, stopSSE } from './lib/stores/downloads';
+  // TODO: Replace custom components with standard SkeletonUI Framework Components
+  // See: https://www.skeleton.dev/docs/svelte/get-started/introduction
+  // TODO: Create project logo - see assets/icons/logo.svg for reference
   import ConfirmDialog from './lib/components/ConfirmDialog.svelte';
   import Toast from './lib/components/Toast.svelte';
   import Dropdown from './lib/components/Dropdown.svelte';
