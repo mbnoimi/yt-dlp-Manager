@@ -162,6 +162,7 @@ def delete_old_files(user_id: int, days: int, username: str) -> dict:
     Delete files older than specified days from user's downloads folder.
     Returns a dict with count of deleted files and folders.
     """
+    # TODO: Modify task parameters by adding "datasource" in addition to "days to keep"
     downloads_path = Path(f"data/{username}/downloads")
     if not downloads_path.exists():
         return {"files_deleted": 0, "folders_deleted": 0, "space_freed": 0}
