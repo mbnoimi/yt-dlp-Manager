@@ -445,6 +445,13 @@ def run_yt_dlp(
     except Exception as e:
         error_msg = str(e)
         
+        # FIXME: Add better error handling for common yt-dlp errors like "raise_no_formats"
+        # Currently the full traceback is logged which is not user-friendly
+        # Common issues: YouTube blocking (no formats available), requires cookies/auth, geo-restriction
+        # Should detect "no formats" errors and provide helpful messages like:
+        # - "Video unavailable: YouTube is blocking the download. Try uploading cookies."
+        # - "Video may be region-locked or age-restricted."
+        
         if state.timed_out:
             return -1, "", f"Timeout after {timeout} seconds"
         

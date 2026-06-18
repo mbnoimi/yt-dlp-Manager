@@ -91,6 +91,7 @@
         hasMore = false;
         total = files.length;
       }
+      // FIXME: Files manually copied by user (not downloaded via app) may not be navigable due to permission/ownership issues when running in Docker as non-root user
       
       currentPath = path;
     } catch (e: any) {

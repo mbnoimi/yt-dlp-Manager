@@ -657,6 +657,8 @@ def run_download(
                             global_path = move_to_global(url, file)
                             if global_path:
                                 target_file = user_folder / global_path.name
+                                # FIXME: create_symlink can fail silently but we ignore its return value!
+                                # If symlink creation fails, file ends up in global without symlink.
                                 create_symlink(str(global_path), str(target_file))
                                 file_path = str(global_path)
                                 user_logger.info(f"Moved to global: {global_path.name}")

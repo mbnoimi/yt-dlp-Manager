@@ -82,6 +82,7 @@
         });
       }
     }
+    // FIXME: follow only scrolls to current content end - doesn't auto-refresh/reload the log file to fetch new lines from server!
   });
 
   $effect(() => {
